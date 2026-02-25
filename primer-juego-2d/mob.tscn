@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://cyq840b4k4kn6"]
+
+[ext_resource type="Script" uid="uid://byiimmmyisiww" path="res://mob.gd" id="1_1qmh0"]
+[ext_resource type="Texture2D" uid="uid://be401agcu48o6" path="res://art/enemyFlyingAlt_1.png" id="2_gfurk"]
+[ext_resource type="Texture2D" uid="uid://6v60vbbnihwl" path="res://art/enemyFlyingAlt_2.png" id="3_ieysi"]
+[ext_resource type="Texture2D" uid="uid://du40tbiscrl30" path="res://art/enemySwimming_1.png" id="4_cixyi"]
+[ext_resource type="Texture2D" uid="uid://d0aouy6e8uigp" path="res://art/enemySwimming_2.png" id="5_7ulmv"]
+[ext_resource type="Texture2D" uid="uid://bkwlmrthw8kuu" path="res://art/enemyWalking_1.png" id="6_pcqmr"]
+[ext_resource type="Texture2D" uid="uid://dq4c2xculgq6a" path="res://art/enemyWalking_2.png" id="7_jbnni"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f65l6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gfurk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ieysi")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_cixyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7ulmv")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_pcqmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jbnni")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8vm8w"]
+radius = 36.0
+height = 106.0
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1376065744]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_1qmh0")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1261181599]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_f65l6")
+animation = &"swim"
+frame = 1
+frame_progress = 0.4799717
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=631726143]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_8vm8w")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=938152302]
