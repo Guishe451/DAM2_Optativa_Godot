@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dybwaidcirke0"]
+
+[ext_resource type="Script" uid="uid://ckndnoob5tru8" path="res://Scripts/GradeNegative.gd" id="1_k52cj"]
+[ext_resource type="Texture2D" uid="uid://dukahp0tn5l3s" path="res://assets/Grades/F.png" id="2_k52cj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcheg"]
+size = Vector2(20, 25)
+
+[node name="GradeNegative" type="Area2D" unique_id=515008023]
+collision_layer = 2
+script = ExtResource("1_k52cj")
+
+[node name="NotesNegatives" type="Sprite2D" parent="." unique_id=1875449047]
+position = Vector2(6.0000305, -0.39998627)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_k52cj")
+
+[node name="HitBoxNegatives" type="CollisionShape2D" parent="." unique_id=1802444692]
+position = Vector2(0, 0.099990845)
+shape = SubResource("RectangleShape2D_tcheg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

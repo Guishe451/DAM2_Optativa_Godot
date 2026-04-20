@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://mjd0m5veax7a"]
+
+[ext_resource type="Script" uid="uid://b5ctxbawksbqb" path="res://Scripts/Home.gd" id="1_cykap"]
+[ext_resource type="Texture2D" uid="uid://de8xie4m2i38b" path="res://assets/Clouds/1.png" id="1_vkfas"]
+[ext_resource type="Texture2D" uid="uid://dchsagxihpd0n" path="res://assets/Clouds/2.png" id="2_q1yq7"]
+[ext_resource type="Texture2D" uid="uid://dy3cehebb3mn3" path="res://assets/Clouds/3.png" id="3_cykap"]
+[ext_resource type="Texture2D" uid="uid://cb6nj1d2m6w58" path="res://assets/Clouds/4.png" id="4_nw1ns"]
+[ext_resource type="Texture2D" uid="uid://d3gos5c74rb0g" path="res://assets/Clouds/5.png" id="5_8riyq"]
+[ext_resource type="Texture2D" uid="uid://pyp4tlc7h8sf" path="res://assets/Clouds/6.png" id="6_gyiet"]
+[ext_resource type="Texture2D" uid="uid://dynerc2uolwob" path="res://assets/Map/Floor.png" id="7_jjai4"]
+[ext_resource type="FontFile" uid="uid://weanx84dckps" path="res://Fonts/Press_Start_2P/PressStart2P-Regular.ttf" id="9_nw1ns"]
+[ext_resource type="AudioStream" uid="uid://baversci57pv2" path="res://Music/HomeMusic.mp3" id="10_nw1ns"]
+[ext_resource type="Texture2D" uid="uid://bpt44v5svops4" path="res://assets/Player/PlayerGreeting2.png" id="11_gyiet"]
+[ext_resource type="Texture2D" uid="uid://bh5tvq8st24ur" path="res://assets/Player/PlayerGreeting.png" id="12_jjai4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7s13"]
+size = Vector2(1930, 264)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8riyq"]
+font = ExtResource("9_nw1ns")
+font_size = 40
+font_color = Color(0.9607843, 0.78431374, 0, 1)
+shadow_size = 15
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t7s13"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_gyiet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jjai4")
+}],
+"loop": true,
+"name": &"Greeting",
+"speed": 5.0
+}]
+
+[node name="Home" type="Node2D" unique_id=1409211686]
+script = ExtResource("1_cykap")
+
+[node name="Clouds" type="Node2D" parent="." unique_id=447655560]
+
+[node name="Clouds1" type="Sprite2D" parent="Clouds" unique_id=2055487665]
+position = Vector2(970.5, 368)
+scale = Vector2(3.3697917, 2.2654321)
+texture = ExtResource("1_vkfas")
+
+[node name="Clouds2" type="Sprite2D" parent="Clouds" unique_id=1507880350]
+position = Vector2(970.5, 368)
+scale = Vector2(3.3697917, 2.2654321)
+texture = ExtResource("2_q1yq7")
+
+[node name="Clouds3" type="Sprite2D" parent="Clouds" unique_id=346146596]
+position = Vector2(970.5, 368)
+scale = Vector2(3.3697917, 2.2654321)
+texture = ExtResource("3_cykap")
+
+[node name="Clouds4" type="Sprite2D" parent="Clouds" unique_id=377164261]
+position = Vector2(970.5, 368)
+scale = Vector2(3.3697917, 2.2654321)
+texture = ExtResource("4_nw1ns")
+
+[node name="Clouds5" type="Sprite2D" parent="Clouds" unique_id=1816533865]
+position = Vector2(970.5, 368)
+scale = Vector2(3.3697917, 2.2654321)
+texture = ExtResource("5_8riyq")
+
+[node name="Clouds6" type="Sprite2D" parent="Clouds" unique_id=1232091108]
+position = Vector2(970.5, 368)
+scale = Vector2(3.3697917, 2.2654321)
+texture = ExtResource("6_gyiet")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1163431057]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=974958934]
+position = Vector2(906.49994, 899.9999)
+scale = Vector2(0.560875, 0.55266666)
+texture = ExtResource("7_jjai4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=180366995]
+position = Vector2(964, 868)
+shape = SubResource("RectangleShape2D_t7s13")
+
+[node name="Control" type="Control" parent="." unique_id=957671399]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayButton" type="Button" parent="Control" unique_id=4873685]
+layout_mode = 0
+offset_left = 880.0
+offset_top = 463.0
+offset_right = 961.0
+offset_bottom = 494.0
+text = "JUGAR"
+
+[node name="TutorialButton" type="Button" parent="Control" unique_id=1533380004]
+layout_mode = 0
+offset_left = 880.0
+offset_top = 507.0
+offset_right = 965.0
+offset_bottom = 538.0
+text = "TUTORIAL"
+
+[node name="TitleLabel" type="Label" parent="Control" unique_id=2082059810]
+layout_mode = 0
+offset_left = 770.0
+offset_top = 356.0
+offset_right = 1130.0
+offset_bottom = 396.0
+text = "Benvingut"
+label_settings = SubResource("LabelSettings_8riyq")
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1115751688]
+stream = ExtResource("10_nw1ns")
+autoplay = true
+parameters/looping = true
+
+[node name="PlayerGreeting" type="AnimatedSprite2D" parent="." unique_id=1019478689]
+position = Vector2(919, 685)
+scale = Vector2(0.14501955, 0.12841798)
+sprite_frames = SubResource("SpriteFrames_t7s13")
+animation = &"Greeting"
+frame_progress = 0.46220347
+
+[connection signal="pressed" from="Control/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control/TutorialButton" to="." method="_on_tutorial_button_pressed"]

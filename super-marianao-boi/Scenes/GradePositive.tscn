@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d4kh0fsdksa6d"]
+
+[ext_resource type="Script" uid="uid://cgdth4v4ahjto" path="res://Scripts/grade_positive.gd" id="1_te0mv"]
+[ext_resource type="Texture2D" uid="uid://b00wtdl2c2e6f" path="res://assets/Grades/A+.png" id="2_4f53d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcheg"]
+size = Vector2(18.5, 23)
+
+[node name="GradePositive" type="Area2D" unique_id=515008023]
+collision_layer = 2
+script = ExtResource("1_te0mv")
+
+[node name="NotesPositives" type="Sprite2D" parent="." unique_id=1875449047]
+position = Vector2(6, 1)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_4f53d")
+
+[node name="HitBoxPositives" type="CollisionShape2D" parent="." unique_id=1802444692]
+shape = SubResource("RectangleShape2D_tcheg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://sdeuw10ggvfg"]
+
+[ext_resource type="Script" uid="uid://b2tmpc7bps7c1" path="res://Scripts/player.gd" id="1_xhfnw"]
+[ext_resource type="Texture2D" uid="uid://buv5ulc33bo0g" path="res://assets/Player/player1.png.png" id="2_cxr5p"]
+[ext_resource type="Texture2D" uid="uid://coqy1n7e3785q" path="res://assets/Player/player2.png" id="3_tdg3f"]
+[ext_resource type="Texture2D" uid="uid://by8icie3r3ogl" path="res://assets/Player/player3.png" id="4_dtqjt"]
+[ext_resource type="Texture2D" uid="uid://d3i0f02dw2kbl" path="res://assets/Player/player4.png" id="5_5ncpa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cxr5p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cxr5p")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tdg3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dtqjt")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cxr5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5ncpa")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kne1u"]
+size = Vector2(46, 69)
+
+[node name="Player" type="CharacterBody2D" unique_id=207013278]
+collision_mask = 5
+script = ExtResource("1_xhfnw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1898487215]
+position = Vector2(1.2000012, 1.2000027)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_cxr5p")
+animation = &"idle"
+frame_progress = 0.10107108
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1857158041]
+position = Vector2(1.2000008, -0.29999924)
+shape = SubResource("RectangleShape2D_kne1u")
+
+[node name="PenaltyTimer" type="Timer" parent="." unique_id=597499910]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="PenaltyTimer" to="." method="_on_penalty_timer_timeout"]

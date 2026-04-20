@@ -1,0 +1,201 @@
+[gd_scene format=3 uid="uid://dgmie07pd38ba"]
+
+[ext_resource type="Script" uid="uid://bra80i10fdo8l" path="res://Scripts/tutorial.gd" id="1_t6ver"]
+[ext_resource type="Texture2D" uid="uid://de8xie4m2i38b" path="res://assets/Clouds/1.png" id="1_ys4pu"]
+[ext_resource type="Texture2D" uid="uid://dchsagxihpd0n" path="res://assets/Clouds/2.png" id="2_h2ono"]
+[ext_resource type="Texture2D" uid="uid://dy3cehebb3mn3" path="res://assets/Clouds/3.png" id="3_on4kn"]
+[ext_resource type="Texture2D" uid="uid://cb6nj1d2m6w58" path="res://assets/Clouds/4.png" id="4_70gml"]
+[ext_resource type="Texture2D" uid="uid://d3gos5c74rb0g" path="res://assets/Clouds/5.png" id="5_8va2t"]
+[ext_resource type="Texture2D" uid="uid://pyp4tlc7h8sf" path="res://assets/Clouds/6.png" id="6_8mnmb"]
+[ext_resource type="Texture2D" uid="uid://dynerc2uolwob" path="res://assets/Map/Floor.png" id="7_koko0"]
+[ext_resource type="PackedScene" uid="uid://sdeuw10ggvfg" path="res://Scenes/Player.tscn" id="8_h2ono"]
+[ext_resource type="FontFile" uid="uid://weanx84dckps" path="res://Fonts/Press_Start_2P/PressStart2P-Regular.ttf" id="9_on4kn"]
+[ext_resource type="Texture2D" uid="uid://b00wtdl2c2e6f" path="res://assets/Grades/A+.png" id="10_70gml"]
+[ext_resource type="Texture2D" uid="uid://dukahp0tn5l3s" path="res://assets/Grades/F.png" id="11_ap3ea"]
+[ext_resource type="Texture2D" uid="uid://blbrytdi1qfkp" path="res://assets/EvilBall/EvilBall.png" id="12_t6ver"]
+[ext_resource type="Texture2D" uid="uid://b0e0kvo47htmx" path="res://assets/AmorDeVerano/Amor de Verano.png" id="13_2nb4t"]
+[ext_resource type="Texture2D" uid="uid://qfyw0eh5md5m" path="res://assets/Drinks/bebida.png" id="14_jb51l"]
+[ext_resource type="Texture2D" uid="uid://d4amgf2chrnn2" path="res://assets/Drinks/PowerUP Doble Salt.png" id="15_dxsep"]
+[ext_resource type="AudioStream" uid="uid://bakma7u4i1l4f" path="res://Music/TutorialMusic.mp3" id="17_2nb4t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsb8r"]
+size = Vector2(1930, 264)
+
+[sub_resource type="LabelSettings" id="LabelSettings_70gml"]
+font = ExtResource("9_on4kn")
+font_color = Color(0.09003628, 0.58015966, 0.6863844, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nb4t"]
+size = Vector2(13, 1011)
+
+[node name="Tutorial" type="Node2D" unique_id=811286933]
+script = ExtResource("1_t6ver")
+
+[node name="Clouds" type="Node2D" parent="." unique_id=1659371314]
+
+[node name="Clouds1" type="Sprite2D" parent="Clouds" unique_id=388341127]
+position = Vector2(970.5, 368)
+scale = Vector2(3.3697917, 2.2654321)
+texture = ExtResource("1_ys4pu")
+
+[node name="Clouds2" type="Sprite2D" parent="Clouds" unique_id=580155203]
+position = Vector2(970.5, 368)
+scale = Vector2(3.3697917, 2.2654321)
+texture = ExtResource("2_h2ono")
+
+[node name="Clouds3" type="Sprite2D" parent="Clouds" unique_id=1024487564]
+position = Vector2(970.5, 368)
+scale = Vector2(3.3697917, 2.2654321)
+texture = ExtResource("3_on4kn")
+
+[node name="Clouds4" type="Sprite2D" parent="Clouds" unique_id=904288074]
+position = Vector2(970.5, 368)
+scale = Vector2(3.3697917, 2.2654321)
+texture = ExtResource("4_70gml")
+
+[node name="Clouds5" type="Sprite2D" parent="Clouds" unique_id=885259811]
+position = Vector2(970.5, 368)
+scale = Vector2(3.3697917, 2.2654321)
+texture = ExtResource("5_8va2t")
+
+[node name="Clouds6" type="Sprite2D" parent="Clouds" unique_id=1225518971]
+position = Vector2(970.5, 368)
+scale = Vector2(3.3697917, 2.2654321)
+texture = ExtResource("6_8mnmb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Clouds" unique_id=1986923808]
+
+[node name="Sprite2D" type="Sprite2D" parent="Clouds/StaticBody2D" unique_id=1174602359]
+position = Vector2(906.49994, 899.9999)
+scale = Vector2(0.560875, 0.55266666)
+texture = ExtResource("7_koko0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clouds/StaticBody2D" unique_id=2142336848]
+position = Vector2(964, 868)
+shape = SubResource("RectangleShape2D_lsb8r")
+
+[node name="Player" parent="." unique_id=207013278 instance=ExtResource("8_h2ono")]
+position = Vector2(69, 683)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=963411759]
+position = Vector2(-90, -807)
+limit_left = 1
+limit_top = 0
+limit_right = 4000
+limit_bottom = 1000
+position_smoothing_enabled = true
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+
+[node name="Control" type="Control" parent="." unique_id=233350075]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TutorialLabel" type="Label" parent="Control" unique_id=1498323638]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 94.0
+offset_right = 1918.0
+offset_bottom = 256.0
+text = "Aquest joc consisteix a agafar totes les notes aprovades (verdes)    que puguis,
+ 
+çevitant les suspeses (vermelles)   i els personatges/obstacles 
+
+que et traguessin temps o no et deixessin recollir-les. "
+label_settings = SubResource("LabelSettings_70gml")
+
+[node name="TutorialLabel2" type="Label" parent="Control" unique_id=1801870342]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 235.0
+offset_right = 1918.0
+offset_bottom = 397.0
+text = "Tranquil també hi ha alguns PowerUps      que us ajudaran en el teu camí."
+label_settings = SubResource("LabelSettings_70gml")
+
+[node name="TutorialLabel3" type="Label" parent="Control" unique_id=543052081]
+layout_mode = 0
+offset_left = 612.0
+offset_top = 296.0
+offset_right = 1271.0
+offset_bottom = 458.0
+text = "Espero que gaudeixis.
+"
+label_settings = SubResource("LabelSettings_70gml")
+
+[node name="TutorialLabel4" type="Label" parent="Control" unique_id=235398107]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 502.0
+offset_right = 298.0
+offset_bottom = 594.0
+text = "    CONTROLS
+
+Esquerra   Dreta
+
+   <         >"
+label_settings = SubResource("LabelSettings_70gml")
+
+[node name="PlayButton" type="Button" parent="Control" unique_id=970595292]
+layout_mode = 0
+offset_left = 747.0
+offset_top = 356.0
+offset_right = 805.0
+offset_bottom = 387.0
+text = "JUGAR"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1728028434]
+
+[node name="GradePositive" type="Sprite2D" parent="Node2D" unique_id=1415949723]
+position = Vector2(1109, 98)
+scale = Vector2(0.15269886, 0.13411458)
+texture = ExtResource("10_70gml")
+
+[node name="GradeNegative" type="Sprite2D" parent="Node2D" unique_id=1931695988]
+position = Vector2(591.00006, 139.00002)
+scale = Vector2(0.15269886, 0.13411458)
+texture = ExtResource("11_ap3ea")
+
+[node name="EvillBall" type="Sprite2D" parent="Node2D" unique_id=273154517]
+position = Vector2(1066, 148)
+scale = Vector2(0.08866826, 0.08035517)
+texture = ExtResource("12_t6ver")
+
+[node name="SummerLove" type="Sprite2D" parent="Node2D" unique_id=1954128470]
+position = Vector2(1125.0001, 149)
+scale = Vector2(0.032000814, 0.03067759)
+texture = ExtResource("13_2nb4t")
+
+[node name="ExtraTime" type="Sprite2D" parent="Node2D" unique_id=1959571467]
+position = Vector2(673, 247)
+scale = Vector2(0.15804587, 0.124713786)
+texture = ExtResource("14_jb51l")
+
+[node name="DobleJump" type="Sprite2D" parent="Node2D" unique_id=1677541661]
+position = Vector2(633.00006, 244)
+scale = Vector2(0.16230726, 0.1390367)
+texture = ExtResource("15_dxsep")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=759884664]
+stream = ExtResource("17_2nb4t")
+autoplay = true
+parameters/looping = true
+
+[node name="Wall1" type="StaticBody2D" parent="." unique_id=393285875]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1" unique_id=1341309379]
+position = Vector2(-8.5, 505.5)
+shape = SubResource("RectangleShape2D_2nb4t")
+
+[node name="Wall2" type="StaticBody2D" parent="." unique_id=673414819]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" unique_id=2002299066]
+position = Vector2(1938, 503)
+shape = SubResource("RectangleShape2D_2nb4t")
+
+[connection signal="pressed" from="Control/PlayButton" to="." method="_on_play_button_pressed"]

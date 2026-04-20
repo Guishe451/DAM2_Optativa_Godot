@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://utt50x20o6l6"]
+
+[ext_resource type="Script" uid="uid://bq6vd470i6d4j" path="res://Scenes/result_screen.gd" id="1_2xpc5"]
+[ext_resource type="PackedScene" uid="uid://o2yee4ttdepm" path="res://Scenes/background.tscn" id="2_6t1oe"]
+[ext_resource type="FontFile" uid="uid://weanx84dckps" path="res://Fonts/Press_Start_2P/PressStart2P-Regular.ttf" id="2_cb4n6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qqelu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6t1oe"]
+font = ExtResource("2_cb4n6")
+font_size = 40
+font_color = Color(0.9607843, 0.78431374, 0, 1)
+shadow_size = 15
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cb4n6"]
+font = ExtResource("2_cb4n6")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_qqelu"]
+font = ExtResource("2_cb4n6")
+
+[node name="ResultScreen" type="Node2D" unique_id=751352796]
+script = ExtResource("1_2xpc5")
+
+[node name="Background" parent="." unique_id=1726461308 instance=ExtResource("2_6t1oe")]
+position = Vector2(988.00006, 500.5)
+scale = Vector2(3.8632815, 3.46875)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background" unique_id=899572543]
+position = Vector2(-403, -205)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/StaticBody2D" unique_id=1320216616]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/StaticBody2D" unique_id=624772524]
+shape = SubResource("RectangleShape2D_qqelu")
+
+[node name="TitleLabel" type="Label" parent="." unique_id=236812882]
+offset_left = 806.0
+offset_top = 229.0
+offset_right = 1166.0
+offset_bottom = 269.0
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_6t1oe")
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1971866992]
+offset_left = 841.0
+offset_top = 294.0
+offset_right = 1081.0
+offset_bottom = 317.0
+text = "Puntuació: 0"
+label_settings = SubResource("LabelSettings_cb4n6")
+
+[node name="MissageLabel" type="Label" parent="." unique_id=686849457]
+offset_left = 840.0
+offset_top = 333.0
+offset_right = 968.0
+offset_bottom = 356.0
+text = "Missagte"
+label_settings = SubResource("LabelSettings_qqelu")
+
+[node name="BackButton" type="Button" parent="." unique_id=882264088]
+offset_left = 892.0
+offset_top = 418.0
+offset_right = 1034.0
+offset_bottom = 449.0
+text = "TORNAR A JUGAR"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

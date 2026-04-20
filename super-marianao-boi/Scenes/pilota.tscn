@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://2iso35caj8fj"]
+
+[ext_resource type="Script" uid="uid://f786v8wlqfg8" path="res://Scripts/pilota.gd" id="1_dg5c3"]
+[ext_resource type="Texture2D" uid="uid://blbrytdi1qfkp" path="res://assets/EvilBall/EvilBall.png" id="1_tuwqn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dg5c3"]
+radius = 11.0
+
+[node name="Pilota" type="CharacterBody2D" unique_id=398664530]
+collision_layer = 4
+collision_mask = 3
+floor_block_on_wall = false
+script = ExtResource("1_dg5c3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1619262362]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_tuwqn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2111561259]
+shape = SubResource("CircleShape2D_dg5c3")

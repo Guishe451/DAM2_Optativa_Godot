@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bmym5pcrb48rl"]
+
+[ext_resource type="Texture2D" uid="uid://qfyw0eh5md5m" path="res://assets/Drinks/bebida.png" id="1_y5vit"]
+[ext_resource type="Script" uid="uid://b4ap334475cci" path="res://Scripts/bebida.gd" id="1_yi71i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yi71i"]
+size = Vector2(14, 26)
+
+[node name="Bebida" type="Area2D" unique_id=26035603]
+script = ExtResource("1_yi71i")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=923946102]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_y5vit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=659777472]
+position = Vector2(-4.5, -6.5)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_yi71i")

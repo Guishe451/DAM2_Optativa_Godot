@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://b5dfcjfrfq64l"]
+
+[ext_resource type="PackedScene" uid="uid://sdeuw10ggvfg" path="res://Player.tscn" id="1_o3cl4"]
+[ext_resource type="Script" uid="uid://bxeywjy2kdxan" path="res://main_level.gd" id="1_ri6rb"]
+[ext_resource type="PackedScene" uid="uid://d4kh0fsdksa6d" path="res://GradePositive.tscn" id="2_o3cl4"]
+[ext_resource type="PackedScene" uid="uid://bmym5pcrb48rl" path="res://bebida.tscn" id="4_cb5hs"]
+[ext_resource type="PackedScene" uid="uid://2iso35caj8fj" path="res://pilota.tscn" id="4_taiwb"]
+[ext_resource type="PackedScene" uid="uid://dybwaidcirke0" path="res://GradeNegative.tscn" id="11_78kfj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fi62q"]
+size = Vector2(219, 169)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ri6rb"]
+size = Vector2(283.25, 120)
+
+[node name="MainLevel" type="Node2D" unique_id=1944457835]
+script = ExtResource("1_ri6rb")
+
+[node name="Player" parent="." unique_id=207013278 instance=ExtResource("1_o3cl4")]
+position = Vector2(32, 714)
+
+[node name="Pilota" parent="." unique_id=398664530 instance=ExtResource("4_taiwb")]
+position = Vector2(85, 714)
+
+[node name="Bebida" parent="." unique_id=26035603 instance=ExtResource("4_cb5hs")]
+position = Vector2(122, 686)
+
+[node name="Bebida2" parent="." unique_id=169512076 instance=ExtResource("4_cb5hs")]
+position = Vector2(184, 681)
+tipus = "PowerUp Doble Salt"
+
+[node name="GradePositive" parent="." unique_id=515008023 instance=ExtResource("2_o3cl4")]
+position = Vector2(-146, 521)
+
+[node name="GradePositive2" parent="." unique_id=16604879 instance=ExtResource("2_o3cl4")]
+position = Vector2(-197, 542)
+
+[node name="GradeNegative" parent="." unique_id=420338512 instance=ExtResource("11_78kfj")]
+position = Vector2(180, 712)
+grade = "F"
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1470664568]
+
+[node name="PuntsLabel" type="Label" parent="HUD" unique_id=1339337476]
+offset_left = 21.0
+offset_top = 35.0
+offset_right = 84.0
+offset_bottom = 58.0
+text = "Punts: 0"
+metadata/_edit_use_anchors_ = true
+
+[node name="PenaltyLabel" type="Label" parent="HUD" unique_id=1804265611]
+offset_left = 20.0
+offset_top = 57.0
+offset_right = 131.0
+offset_bottom = 80.0
+text = "Penalització: 3"
+
+[node name="TimerLabel" type="Label" parent="HUD" unique_id=1695799355]
+offset_left = 19.0
+offset_top = 14.0
+offset_right = 82.0
+offset_bottom = 37.0
+text = "Tiempo:"
+horizontal_alignment = 2
+
+[node name="TempsExtraLabel" type="Label" parent="HUD" unique_id=154747813]
+offset_left = 118.0
+offset_top = 15.0
+offset_right = 141.0
+offset_bottom = 38.0
+
+[node name="PowerUpLabel" type="Label" parent="HUD" unique_id=423413461]
+offset_left = 21.0
+offset_top = 79.0
+offset_right = 109.0
+offset_bottom = 102.0
+
+[node name="suelo1" type="StaticBody2D" parent="." unique_id=1939109784]
+collision_layer = 3
+
+[node name="ColorRect" type="ColorRect" parent="suelo1" unique_id=1843186527]
+offset_left = 212.0
+offset_top = 703.0
+offset_right = 430.0
+offset_bottom = 873.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="suelo1" unique_id=1681047113]
+position = Vector2(321, 788.5)
+shape = SubResource("RectangleShape2D_fi62q")
+debug_color = Color(1, 1, 1, 0.41960785)
+
+[node name="suelo2" type="StaticBody2D" parent="." unique_id=1409254331]
+collision_layer = 3
+
+[node name="ColorRect" type="ColorRect" parent="suelo2" unique_id=1629889120]
+offset_left = -2.0
+offset_top = 752.0
+offset_right = 281.0
+offset_bottom = 872.0
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="suelo2" unique_id=181118862]
+position = Vector2(140, 812)
+shape = SubResource("RectangleShape2D_ri6rb")

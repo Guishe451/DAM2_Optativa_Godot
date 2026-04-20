@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dand5ycqfu2qb"]
+
+[ext_resource type="Texture2D" uid="uid://b0e0kvo47htmx" path="res://assets/AmorDeVerano/Amor de Verano.png" id="1_bkffl"]
+[ext_resource type="Script" uid="uid://dek6xvi7ix8dg" path="res://Scripts/amor_de_verano.gd" id="1_wbru5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8q58v"]
+radius = 150.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bkffl"]
+radius = 80.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbru5"]
+size = Vector2(26, 69)
+
+[node name="AmorDeVerano" type="Area2D" unique_id=678243172]
+script = ExtResource("1_wbru5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1713509579]
+position = Vector2(7, 1.0000001)
+scale = Vector2(0.05, 0.049)
+texture = ExtResource("1_bkffl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2037958179]
+shape = SubResource("CircleShape2D_8q58v")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=56459026]
+shape = SubResource("CircleShape2D_bkffl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1322912311]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1982763459]
+position = Vector2(-1, 1.5)
+shape = SubResource("RectangleShape2D_wbru5")

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://o2yee4ttdepm"]
+
+[ext_resource type="Texture2D" uid="uid://cd4kh3nav8v4o" path="res://assets/Map/Background/BACKGROUND.png" id="1_gjjrj"]
+[ext_resource type="Texture2D" uid="uid://clghs6vguv15o" path="res://assets/Map/Background/WOODS - Fourth.png" id="2_vvxqx"]
+[ext_resource type="Texture2D" uid="uid://d185fcxxs6kii" path="res://assets/Map/Background/WOODS - Third.png" id="3_cdpnt"]
+[ext_resource type="Texture2D" uid="uid://cucgyibgk250" path="res://assets/Map/Background/VINES - Second.png" id="4_8u6ia"]
+[ext_resource type="Texture2D" uid="uid://beq6882d35obi" path="res://assets/Map/Background/WOODS - Second.png" id="5_6i7po"]
+[ext_resource type="Texture2D" uid="uid://w4ct27mc3mjm" path="res://assets/Map/Background/BUSH - BACKGROUND.png" id="6_e8087"]
+[ext_resource type="Texture2D" uid="uid://do5tw5b6qjp6q" path="res://assets/Map/Background/WOODS - First.png" id="7_b3bg0"]
+
+[node name="Background" type="Sprite2D" unique_id=1726461308]
+texture = ExtResource("1_gjjrj")
+
+[node name="WoodsFourth" type="Sprite2D" parent="." unique_id=414342471]
+texture = ExtResource("2_vvxqx")
+
+[node name="WoodsThird" type="Sprite2D" parent="." unique_id=1243151239]
+texture = ExtResource("3_cdpnt")
+
+[node name="VinesSecond" type="Sprite2D" parent="." unique_id=1371077307]
+texture = ExtResource("4_8u6ia")
+
+[node name="WoodsSecond" type="Sprite2D" parent="." unique_id=264890331]
+texture = ExtResource("5_6i7po")
+
+[node name="BushBackground" type="Sprite2D" parent="." unique_id=995223379]
+texture = ExtResource("6_e8087")
+
+[node name="WoodsFirst" type="Sprite2D" parent="." unique_id=823816190]
+texture = ExtResource("7_b3bg0")
